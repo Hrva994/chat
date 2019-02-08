@@ -1,10 +1,12 @@
 var express = require('express');
 var socket = require('socket.io');
 
+const port = process.env.PORT || 3000;
+
 //App setup
 var app = express();
 
-const port = process.env.PORT || 3000;
+
 //Create a server
 var server = app.listen(port, () =>{
   console.log("Connection established");

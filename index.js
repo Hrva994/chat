@@ -13,7 +13,7 @@ var server = app.listen(port, () =>{
 });
 
 //Static files
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 //Socket setup
 var io = socket(server);

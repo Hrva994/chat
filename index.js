@@ -1,22 +1,26 @@
 var express = require('express');
 var socket = require('socket.io');
+const path = require('path');
 
 const port = process.env.PORT || 3000;
+//const index = path.join(__dirname,'/public/index.html');
 
 //App setup
-var app = express();
+const app = express()
+  .use(express.static(__dirname + '/public'))
+  .listen(port, () => console.log(`Listening on port ${port}`));
 
 
 //Create a server
-var server = app.listen(port, () =>{
-  console.log("Connection established");
-});
+// var server = app.listen(port, () =>{
+//   console.log("Connection established");
+// });
 
 //Static files
-app.use(express.static(__dirname + '/public'));
+//app.use(express.static(__dirname + '/public'));
 
 //Socket setup
-var io = socket(server);
+var io = socket(app);
 
 io.on('connection', function(socket){
   console.log("Socket connection established");

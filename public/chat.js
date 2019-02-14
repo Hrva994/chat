@@ -1,4 +1,4 @@
-var socket = io.connect('http://localhost:3000' || 'https://secret-cliffs-83069.herokuapp.com/');
+var socket = io();
 
 var message = document.getElementById('message'),
     handle = document.getElementById('handle'),

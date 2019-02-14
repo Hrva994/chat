@@ -1,4 +1,4 @@
-var socket = io();
+var socket = io('https://git.heroku.com/secret-cliffs-83069.git');
 
 var message = document.getElementById('message'),
     handle = document.getElementById('handle'),
